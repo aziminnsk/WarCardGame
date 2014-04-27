@@ -62,6 +62,6 @@ public class Deck
    {
       Deck deck = new Deck();
       
-      System.out.println("Shitstains");
+      System.out.println("done");
    }
 }
