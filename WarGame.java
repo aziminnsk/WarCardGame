@@ -6,8 +6,8 @@ public class WarGame
 {
    public static void main(String [] args)
    {
-      final int DECKSIZE = 53;
-      final int HALFDECK = 27;
+      final int DECKSIZE = 52;
+      final int HALFDECK = 26;
       Scanner keyboard = new Scanner(System.in);
       
       System.out.println("This is a game of War");
@@ -22,10 +22,22 @@ public class WarGame
       
       for(int i = 0; i < HALFDECK; i++)
       {
-         int aCard = rand.nextInt(DECKSIZE);
-         
-         p1.add(aCard);
+         int length = deck.getSize();
+         int aCard = rand.nextInt(length);
+         Card foundCard = deck.popItem(aCard);
+         p1.add(foundCard);
       }
+      
+      for(int i = 0; i < HALFDECK; i++)
+      {
+         int length = deck.getSize();
+         int aCard = rand.nextInt(length);
+         Card foundCard = deck.popItem(aCard);
+         p2.add(foundCard);
+      }
+      
+      System.out.println(p1.size());
+      System.out.println(p2.size());
       
       
       

@@ -40,8 +40,28 @@ public class Deck
       return deck.get(index);
    }
    
+   /**
+      This method returns the size of the deck
+      arraylist
+      @return deck.size() returns the size of the array list
+   */
+   
+   public int getSize()
+   {
+      return deck.size();
+   }
+   
+   public Card popItem(int index)
+   {
+      Card card = deck.get(index);
+      deck.remove(index);
+      return card;
+   }
+   
    public static void main(String [] args)
    {
       Deck deck = new Deck();
+      
+      System.out.println("Shitstains");
    }
 }
