@@ -8,7 +8,7 @@ import java.util.ArrayList;
    @param CARDS the number of cards per suite
 */
 
-public class Deck
+public class Deck extends Card
 {
    private ArrayList<Card> deck = new ArrayList<Card>();
    private final int SUITES = 5;
@@ -57,6 +57,8 @@ public class Deck
       deck.remove(index);
       return card;
    }
+   
+   
    
    public static void main(String [] args)
    {

@@ -107,4 +107,33 @@ public class Card
          
       return status;
    }
+   
+   /**
+      This method compares two card objects and 
+      checks to see which is greater. 
+      @param status boolean value telling if it is greater or lesser than
+   */
+   
+   public boolean greaterThan(Card object2)
+   {
+      boolean status;
+      
+      if (this.rank > object2.rank)
+         status = true;
+      else
+         status = false;
+         
+      return status;
+   }
+   
+   public static void main(String [] args)
+   {
+      Card card = new Card(1,12);
+      Card card2 = new Card(2,10);
+      
+      boolean a = card.greaterThan(card2);
+      
+      System.out.println(a);
+      
+   }
 }

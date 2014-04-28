@@ -1,19 +1,21 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class WarRules
+public class WarRules extends Card
 {
    private final ArrayList<Card> p1 = new ArrayList<Card>();
    private final ArrayList<Card> p2 = new ArrayList<Card>();
    final int FULLDECK = 52;
    final int HALFDECK = 26;
    
+   
    Deck deck = new Deck();
    Random rand = new Random();
    
    
    public WarRules()
-   {
+   {  
+      super();
       System.out.println("This is a game of War");
       System.out.println("This game requires 2 players");
    }
@@ -37,36 +39,38 @@ public class WarRules
       }
    }
    
-   public Object getP1TopCard()
+   public Card getP1TopCard()
    {
-      Object card = p1.get(0);
+      Card card = p1.get(0);
       return card;
    }
    
-   public Object getP2TopCard()
+   public Card getP2TopCard()
    {
-      Object card = p2.get(0);
+      Card card = p2.get(0);
       return card;
    }
    
-   //public boolean isGreater(Object card1, Object card2)
-   // {
-//       Object p1Card = getP1TopCard();
-//       Object p2Card = getP2TopCard();
-//       
-//       int p1CardCount = p1Card.getRank();
-//       int p2CardCount = p2Card.getRank();
-//       
-//       
-//       if (p1Card > p2Card)
-//       {
-//          return true;
-//       }
-//       else
-//       {
-//          return false;
-//       }
-//    }
+   public boolean isGreater(Card card2)
+   {  
+      boolean greater;
+       
+      Card p1Card = getP1TopCard();
+      Card p2Card = getP2TopCard();
+       
+      boolean status = p1Card.greaterThan(p2Card);
+      
+      if (status == true)
+      {
+         greater = true;
+      }
+      else
+      {
+         greater = false;
+      }
+      
+      return greater;
+   }
      
    public static void main(String [] args)
    {
@@ -74,11 +78,16 @@ public class WarRules
       
       war.createDecks();
       
-      Object a = war.getP1TopCard();
-      Object b = war.getP2TopCard();
+      Card a = war.getP1TopCard();
+      Card b = war.getP2TopCard();
+      
+      boolean c = a.greaterThan(b);
+      boolean d = a.equals(b);
       
       System.out.println(a);
       System.out.println(b);
+      System.out.println(c);
+      System.out.println(d);
       
    }
 }
