@@ -54,6 +54,30 @@ public class Card
       return rank;
    }
    
+   public String getSuiteString(int theSuite)
+   {
+      String suited = ("empty");
+      
+      if (theSuite == SPADES)
+      {
+         suited = ("Spades");
+      }
+      else if (theSuite == CLUBS)
+      {
+         suited = ("Clubs");
+      }
+      else if (theSuite == HEARTS)
+      {
+         suited = ("Hearts");
+      }
+      else if (theSuite == DIAMONDS)
+      {
+         suited = ("Diamonds");
+      }
+      
+      return suited;
+   }
+   
    /**
       This method returns a string telling teh rank and suit of the card
       @param none
@@ -62,7 +86,7 @@ public class Card
    public String toString()
    {
   
-      String toString = ("This card is the " + rank + " of " + suit);
+      String toString = ("This card is the " + rank + " of " + getSuiteString(suit));
       
       return toString;
    }
