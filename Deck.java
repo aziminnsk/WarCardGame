@@ -16,6 +16,7 @@ public class Deck extends Card
    
    /**
       Default Constructor. Creates a 52 card deck
+      @param card Card object adding cards to array.
    */
    
    public Deck()
@@ -50,6 +51,11 @@ public class Deck extends Card
    {
       return deck.size();
    }
+   
+   /**
+      This method returns a card from the array
+      while also removing it from an array
+   */
    
    public Card popItem(int index)
    {
