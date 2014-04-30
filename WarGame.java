@@ -4,6 +4,8 @@ public class WarGame
 {
    int weiner;
    WarRules rules = new WarRules();
+   String pic1, pic2;
+   String gameWinner = "Still no Winner";
    
    /**
       Default constructor. Initiates the creatDecks method and
@@ -30,16 +32,19 @@ public class WarGame
       boolean equaled;
       boolean greater;
       int turnWinner = 0;
+      String p1IconCard, p2IconCard;
          
       if (gameOverMan == true)
       {
          weiner = rules.findWinner();
          if (weiner == 1)
          {
+            gameWinner = "Player 1 wins!";
             System.out.println("Player 1 wins!");
          }
          else if (weiner == 2)
          {
+            gameWinner = "Player 2 wins!";
             System.out.println("Player 2 wins!");
          }
          else
@@ -62,6 +67,10 @@ public class WarGame
          else
          {
             leftCard = rules.getP1TopCard();
+            p1IconCard = leftCard.getPic();
+            pic1 = leftCard.getPic();
+            System.out.println(p1IconCard);
+            System.out.println(leftCard);
          }
          
          if(rules.p2DeckSize() == 0)
@@ -71,6 +80,10 @@ public class WarGame
          else
          {         
             rightCard = rules.getP2TopCard();
+            p2IconCard = rightCard.getPic();
+            pic2 = rightCard.getPic();
+            System.out.println(p2IconCard);
+            System.out.println(rightCard);
          }
          
          equaled = leftCard.equals(rightCard);
@@ -160,6 +173,21 @@ public class WarGame
    {
       Card combatant = rules.getP2TopCard();
       System.out.println(combatant);
+   }
+   
+   public String getPicFile1()
+   {  
+      return pic1;
+   }
+   
+   public String getPicFile2()
+   {  
+      return pic2;
+   }
+   
+   public String getWinnerString()
+   {
+      return gameWinner;
    }
    
    public static void main(String [] args)

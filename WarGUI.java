@@ -14,15 +14,23 @@ public class WarGUI extends JFrame
    private JLabel decks;
    private JLabel title;
    private JLabel card1, card2;
-   private ImageIcon image;
+   private JLabel winnerz;
+   private ImageIcon image1, image2;
+   String pic1, pic2, gameWinner;
    
    public WarGUI()
    {
+      game = new WarGame();
+      
       setLayout(new BorderLayout());
       
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       
-      image = new ImageIcon("back.jpg");
+      pic1 = "back.jpg";
+      pic2 = "back.jpg";
+      
+      image1 = new ImageIcon(pic1);
+      image2 = new ImageIcon(pic2);
       
       player1 = new JPanel();
       player2 = new JPanel();
@@ -30,8 +38,8 @@ public class WarGUI extends JFrame
       top = new JPanel();
       bottom = new JPanel();
       
-      card1 = new JLabel(image);
-      card2 = new JLabel(image);
+      card1 = new JLabel(image1);
+      card2 = new JLabel(image2);
       
       player1.add(card1);
       
@@ -43,7 +51,15 @@ public class WarGUI extends JFrame
       
       go = new JButton("Deal");
       
+      go.addActionListener(new Turn());
+      
       center.add(go);
+      
+      gameWinner = game.getWinnerString();
+      
+      winnerz = new JLabel(gameWinner);
+      
+      center.add(winnerz);
       
       top.add(title);
       
@@ -59,15 +75,27 @@ public class WarGUI extends JFrame
       setVisible(true);
    }
    
-   private class Turn extends WarGUI implements ActionListener
+   private class Turn implements ActionListener
    {
       public void actionPerformed(ActionEvent e)
-      {
-         ImageIcon image2 = new ImageIcon("aces.jpg");
+      {  
+         game.turn();
          
-         JLabel card3 = new JLabel(image2);
+         pic1 = game.getPicFile1();
          
-         player1.setIcon(image2);
+         pic2 = game.getPicFile2();
+         
+         image1 = new ImageIcon(pic1);
+         
+         image2 = new ImageIcon(pic2);
+         
+         card1.setIcon(image1);
+         
+         card2.setIcon(image2);
+         
+         gameWinner = game.getWinnerString();
+         
+         winnerz.setText(gameWinner);
       }
    }
    

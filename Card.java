@@ -126,6 +126,194 @@ public class Card
       return status;
    }
    
+   public String getPic()
+   {
+      String fileName = null;
+      
+      if (suit == SPADES)
+      {
+         switch (rank)
+         {
+            case 1:
+               fileName = "aces.jpg";
+               break;
+            case 2:
+               fileName = "2s.jpg";
+               break;
+            case 3:
+               fileName = "3s.jpg";
+               break;
+            case 4:
+               fileName = "4s.jpg";
+               break;
+            case 5:
+               fileName = "5s.jpg";
+               break;
+            case 6:
+               fileName = "6s.jpg";
+               break;
+            case 7:
+               fileName = "7s.jpg";
+               break;
+            case 8:
+               fileName = "8s.jpg";
+               break;
+            case 9:
+               fileName = "9s.jpg";
+               break;
+            case 10:
+               fileName = "10s.jpg";
+               break;
+            case 11:
+               fileName = "jacks.jpg";
+               break;
+            case 12:
+               fileName = "queens.jpg";
+               break;
+            case 13:
+               fileName = "kings.jpg";
+               break;
+         }
+      }
+      else if (suit == CLUBS)
+      {
+         switch (rank)
+         {
+            case 1:
+               fileName = "acec.jpg";
+               break;
+            case 2:
+               fileName = "2c.jpg";
+               break;
+            case 3:
+               fileName = "3c.jpg";
+               break;
+            case 4:
+               fileName = "4c.jpg";
+               break;
+            case 5:
+               fileName = "5c.jpg";
+               break;
+            case 6:
+               fileName = "6c.jpg";
+               break;
+            case 7:
+               fileName = "7c.jpg";
+               break;
+            case 8:
+               fileName = "8c.jpg";
+               break;
+            case 9:
+               fileName = "9c.jpg";
+               break;
+            case 10:
+               fileName = "10c.jpg";
+               break;
+            case 11:
+               fileName = "jackc.jpg";
+               break;
+            case 12:
+               fileName = "queenc.jpg";
+               break;
+            case 13:
+               fileName = "kingc.jpg";
+               break;
+         }
+      }
+      else if (suit == HEARTS)
+      {
+         switch (rank)
+         {
+            case 1:
+               fileName = "aceh.jpg";
+               break;
+            case 2:
+               fileName = "2h.jpg";
+               break;
+            case 3:
+               fileName = "3h.jpg";
+               break;
+            case 4:
+               fileName = "4h.jpg";
+               break;
+            case 5:
+               fileName = "5h.jpg";
+               break;
+            case 6:
+               fileName = "6h.jpg";
+               break;
+            case 7:
+               fileName = "7h.jpg";
+               break;
+            case 8:
+               fileName = "8h.jpg";
+               break;
+            case 9:
+               fileName = "9h.jpg";
+               break;
+            case 10:
+               fileName = "10h.jpg";
+               break;
+            case 11:
+               fileName = "jackh.jpg";
+               break;
+            case 12:
+               fileName = "queenh.jpg";
+               break;
+            case 13:
+               fileName = "kingh.jpg";
+               break;
+         }
+      }
+      else if (suit == DIAMONDS)
+      {
+         switch (rank)
+         {
+            case 1:
+               fileName = "aced.jpg";
+               break;
+            case 2:
+               fileName = "2d.jpg";
+               break;
+            case 3:
+               fileName = "3d.jpg";
+               break;
+            case 4:
+               fileName = "4d.jpg";
+               break;
+            case 5:
+               fileName = "5d.jpg";
+               break;
+            case 6:
+               fileName = "6d.jpg";
+               break;
+            case 7:
+               fileName = "7d.jpg";
+               break;
+            case 8:
+               fileName = "8d.jpg";
+               break;
+            case 9:
+               fileName = "9d.jpg";
+               break;
+            case 10:
+               fileName = "10d.jpg";
+               break;
+            case 11:
+               fileName = "jackd.jpg";
+               break;
+            case 12:
+               fileName = "queend.jpg";
+               break;
+            case 13:
+               fileName = "kingd.jpg";
+               break;
+         }
+      }
+      
+      return fileName;
+   }
+   
    public static void main(String [] args)
    {
       Card card = new Card(1,12);
