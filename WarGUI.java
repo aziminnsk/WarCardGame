@@ -1,6 +1,27 @@
-import javax.swing.*;
+import javax.swing.*; //initiate GUI modules
 import java.awt.*;
 import java.awt.event.*;
+
+/**
+   This class is used to create a GUI
+   that can be used with teh WarGame class to 
+   play.
+   @param player1 first player card
+   @param player2 second player card
+   @param center holds the button and who won
+   @param top holds title
+   @param bottom holds decks
+   @param game WarGame class
+   @param go button to take turn
+   @param card1 first card
+   @param card2 second card
+   @param image1 holds card 1 picture
+   @param image2 holds the second card picuture
+   @param winnerz holds the winner
+   @param pic1 holds the string of the file
+   @param pic2 holds the string of teh second file
+   @param gameWinner holds the gameWinning string
+*/
 
 public class WarGUI extends JFrame
 {
@@ -17,6 +38,10 @@ public class WarGUI extends JFrame
    private JLabel winnerz;
    private ImageIcon image1, image2;
    String pic1, pic2, gameWinner;
+   
+   /**
+      This class is used to run the GUI
+   */
    
    public WarGUI()
    {
@@ -74,6 +99,11 @@ public class WarGUI extends JFrame
       pack();
       setVisible(true);
    }
+   
+   /**
+      This class is used to control the action
+      of the button.
+   */
    
    private class Turn implements ActionListener
    {
