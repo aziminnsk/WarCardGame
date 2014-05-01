@@ -175,15 +175,33 @@ public class WarGame
       System.out.println(combatant);
    }
    
+   /**
+      This method retrieves teh file name
+      for the image file
+      @return pic1 String for the file name
+   */
+   
    public String getPicFile1()
    {  
       return pic1;
    }
    
+   /**
+      This method retrieves the filename
+      for the image file of the second card
+      @return pic2 String for the file name
+   */
+   
    public String getPicFile2()
    {  
       return pic2;
    }
+   
+   /**
+      This method gets the string for 
+      the winner
+      @return gameWinner the string telling the winner
+   */
    
    public String getWinnerString()
    {

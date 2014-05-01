@@ -126,6 +126,13 @@ public class Card
       return status;
    }
    
+   /**
+      This method determines what file
+      to get for the picture
+      @param fileName name of the jpeg file
+      @return fileName the name of the jpg file
+   */
+   
    public String getPic()
    {
       String fileName = null;
